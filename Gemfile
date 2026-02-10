@@ -8,6 +8,7 @@ gem "jekyll", "~> 4.3.4"
 gem "csv"
 gem "base64"
 gem "logger"
+gem "sass-embedded", "~> 1.60" # 核心编译器
 
 # Plugins
 group :jekyll_plugins do

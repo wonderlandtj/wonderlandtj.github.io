@@ -3,7 +3,7 @@
 
 title: Yufei Chen
 description: Yufei Chen's personal website.
-baseurl: "/"
+baseurl: ""
 url: "https://wonderlandtj.github.io"
 og_image: /assets/img/profile-pic.jpg
 google_analytics: "UA-121636368-3"
@@ -38,7 +38,9 @@ footer:
 # Build settings
 markdown: kramdown
 sass:
+    sourcemaps: true
     style: :compressed
+    implementation: sass-embedded # 必须添加这一行
 plugins:
   - jekyll-feed
 
