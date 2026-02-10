@@ -1,6 +1,10 @@
 @use "variables" as variables;
 @use "mixins" as mixins;
 
+* {
+  box-sizing: border-box;
+}
+
 /* 调整整个页面主体宽度 */
 .wrapper {
   width: 100%;
@@ -51,6 +55,11 @@
       line-height: 16px;
       flex-basis: auto;  // 可以尝试 auto 或设定最小宽度 min-width 来避免元素过于拥挤
       min-width: 190px;   // 为每个联系项设置最小宽度
+
+      @include mixins.media-query(variables.$on-mobile) {
+        min-width: 0; // 允许在手机端缩小
+        flex-basis: 100%; // 或者让它占满一行
+      }
 
       img {
         width: 16px;
@@ -131,6 +140,11 @@ img.work-bubble {
   height: 150px;
   width: auto;
   max-width: none;
+
+  @include mixins.media-query(variables.$on-mobile) {
+    max-width: 50%; // 手机端必须限制，防止溢出
+    height: auto;   // 保持比例
+  }
 }
 
 /* 专门针对视频 */
@@ -139,6 +153,11 @@ video.work-bubble {
   height: auto;   /* 设置你想要的视频高度 */
   max-width: none;
   object-fit: contain;
+
+  @include mixins.media-query(variables.$on-mobile) {
+    max-width: 50%; // 手机端必须限制，防止溢出
+    height: auto;   // 保持比例
+  }
 }
 
 .course-table {
@@ -146,6 +165,9 @@ video.work-bubble {
   border-collapse: collapse;
   margin-top: 12px;
   font-size: 13px;
+  display: block;      // 将 table 转为 block 以便滚动
+  overflow-x: auto;    // 开启横向滚动
+  -webkit-overflow-scrolling: touch; // 让 iOS 滚动更顺滑
 }
 
 .course-table th,

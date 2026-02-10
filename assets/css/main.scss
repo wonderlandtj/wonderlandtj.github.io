@@ -15,3 +15,8 @@
 @use "site";
 @use "work";
 @use "not_found";
+
+html {
+  /* 强制显示垂直滚动条 */
+  overflow-y: scroll;
+}
