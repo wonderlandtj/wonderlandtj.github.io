@@ -38,9 +38,7 @@ footer:
 # Build settings
 markdown: kramdown
 sass:
-    sourcemaps: true
     style: :compressed
-    implementation: sass-embedded # 必须添加这一行
 plugins:
   - jekyll-feed
 
